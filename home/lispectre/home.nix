@@ -29,6 +29,8 @@
     hyperfine
     uutils-coreutils
     btop    
+    typst
+    typstyle
     
     # Dev
     gcc
