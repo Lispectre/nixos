@@ -58,7 +58,7 @@
           };
 
           # README MORE: https://wiki.archlinux.org/title/ZFS#Swap_volume
-          "root/swap" = {
+          "swap" = {
             type = "zfs_volume";
             size = "16G";
             content = {
