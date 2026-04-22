@@ -17,6 +17,7 @@
         echo 'zfs load-key -a && kill $(pidof zfs) && exit' >> /root/.profile
       '';
     };
+    services.swapDevices = []; # To avoid stalling while waiting for swap.
     availableKernelModules = ["e1000e"];
   };
 }
