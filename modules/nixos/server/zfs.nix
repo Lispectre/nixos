@@ -14,7 +14,7 @@
         ];
       };
       postCommands = ''
-        echo 'zfs load-key -a && kill $(pidof zfs) && exit' >> /root/.profile
+        echo 'while ! zfs load-key -a; do sleep 5; done && kill $(pidof zfs) && exit' >> /root/.profile
       '';
     };
     availableKernelModules = ["e1000e"];
