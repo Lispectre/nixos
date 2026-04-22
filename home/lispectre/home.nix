@@ -5,13 +5,13 @@
   home.homeDirectory = "/home/lispectre";
 
   imports = [
-    ../../modules/home/development/helix.nix
-    ../../modules/home/development/alacritty.nix
-    ../../modules/home/development/nushell.nix
-    ../../modules/home/development/git.nix
+    ../../modules/home/common/helix.nix
+    ../../modules/home/common/nushell.nix
+    ../../modules/home/common/git.nix
 
-    ../../modules/home/internet/brave.nix
-    ../../modules/home/multimedia/mpv.nix
+    ../../modules/home/desktop/brave.nix
+    ../../modules/home/desktop/mpv.nix
+    ../../modules/home/desktop/alacritty.nix
   ];
 
   home.packages = with pkgs; [
@@ -33,16 +33,26 @@
     typstyle
     
     # Dev
+    zed-editor
+    vscode # TODO: configure as home-manager module    
     gcc
     nixd
+    nil
     jujutsu
     
     # Gaming
     steam
     vesktop
 
+    # Internet
+    qbittorrent
+
+    # Misc.
+    calibre
+
     # Fonts I use (probably to be moved elsewhere)
     nerd-fonts.jetbrains-mono
+    nerd-fonts.mononoki
   ];
 
   home.stateVersion = "25.11";

@@ -7,36 +7,44 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    fenix = {
-      url = "github:nix-community/fenix";
+    disko = {
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+  outputs = inputs@{ nixpkgs, home-manager, disko, ... }:
+  let
+    user = "lispectre";
+    lib = nixpkgs.lib;
 
-  outputs = inputs@{ nixpkgs, home-manager, fenix, ... }: 
-    let
-      user = "lispectre";
-      lib = nixpkgs.lib;
-
-      mkSystem = system: name:
-        lib.nixosSystem {
-          system = system;
-          specialArgs = { inherit inputs user; };
-          modules =  [
-              ./hosts/${name}
-              
-              home-manager.nixosModules.home-manager {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.${user} = import ./home/${user}/home.nix;
-                home-manager.backupFileExtension = "backup"; 
-              }
-            ];
-        };
-    in {
-      nixosConfigurations = {
-        # Desktop
-        ghost = mkSystem "x86_64-linux" "ghost";
+    mkSystem = { system, name, homeCfg ? ./home/${user}/home.nix, extraModules ? [] }:
+      lib.nixosSystem {
+        system = system;
+        specialArgs = { inherit inputs user; };
+        modules = [
+          ./hosts/${name}
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${user} = import homeCfg;
+            home-manager.backupFileExtension = "backup";
+          }
+        ] ++ extraModules;
       };
+  in {
+    nixosConfigurations = {
+      ghost = mkSystem {
+        system = "x86_64-linux";
+        name = "ghost";
+      };
+      field = mkSystem {
+        system = "x86_64-linux";
+        name = "field";
+        homeCfg = ./home/${user}/home-server.nix;
+        extraModules = [
+          disko.nixosModules.disko
+        ];
+      };
+    };
   };
 }
