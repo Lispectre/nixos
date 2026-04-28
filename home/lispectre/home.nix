@@ -43,6 +43,7 @@
     # Gaming
     steam
     vesktop
+    mangohud
 
     # Internet
     qbittorrent

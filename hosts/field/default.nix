@@ -1,14 +1,17 @@
 {
   imports = [
-    ./hardware-configuration.nix
-    ./disk-config.nix
-    ./users.nix
-    ../../modules/nixos/core.nix
     ./configuration.nix
-    # ../../modules/nixos/server/base.nix
+    ./hardware-configuration.nix
+    ./network-configuration.nix
+    ./users.nix
+    ./disk-configuration.nix
+
+    ../../modules/nixos/core.nix
     ../../modules/nixos/server/zfs.nix
+    ../../modules/nixos/server/ssh.nix
   ];
 
   networking.hostName = "field";
   networking.hostId = "cc8ee504";  
+  system.stateVersion = "25.11";
 }

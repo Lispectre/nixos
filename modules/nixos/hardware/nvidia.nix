@@ -1,4 +1,5 @@
-{ config, ... }:
+{ config, inputs, ... }:
+
 {
   hardware.graphics = {
     enable = true;
