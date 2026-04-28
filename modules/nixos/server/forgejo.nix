@@ -12,7 +12,7 @@ in
     settings = {
       server = {
         DOMAIN = "git.local";
-        ROOT_URL = "https://${srv.DOMAIN}/";
+        ROOT_URL = "http://${srv.DOMAIN}/";
         HTTP_PORT = 3000;
         SSH_PORT = lib.head config.services.openssh.ports;
       };
