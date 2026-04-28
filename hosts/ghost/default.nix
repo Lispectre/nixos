@@ -11,6 +11,7 @@
      ../../modules/nixos/desktop/pipewire.nix
      ../../modules/nixos/desktop/gamemode.nix
      ../../modules/nixos/hardware/nvidia.nix
+     ../../modules/nixos/desktop/tailscale.nix
   ];
 
   networking.hostName = "ghost";

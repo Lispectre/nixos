@@ -35,22 +35,6 @@
           }
         ] ++ extraModules;
       };
-
-    # mkSystem = { system, name, pkgs ? nixpkgs, hm ? home-manager, homeCfg ? ./home/${user}/home.nix, extraModules ? [] }:
-    #   pkgs.lib.nixosSystem {
-    #     system = system;
-    #     specialArgs = { inherit inputs user; };
-    #     modules = [
-    #       { nixpkgs.pkgs = pkgs.legacyPackages.${system}; }
-    #       ./hosts/${name}
-    #       hm.nixosModules.home-manager {
-    #         home-manager.useGlobalPkgs = true;
-    #         home-manager.useUserPackages = true;
-    #         home-manager.users.${user} = import homeCfg;
-    #         home-manager.backupFileExtension = "backup";
-    #       }
-    #     ] ++ extraModules;
-    #   };
   in {
     nixosConfigurations = {
       ghost = mkSystem {
