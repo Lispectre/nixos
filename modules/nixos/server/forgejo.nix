@@ -11,8 +11,9 @@ in
     lfs.enable = true;
     settings = {
       server = {
-        DOMAIN = "git.local";
-        ROOT_URL = "http://${srv.DOMAIN}/";
+        DOMAIN = "field.tail1c9f34.ts.net";
+        ROOT_URL = "https://${srv.DOMAIN}/git/";
+        SERVE_FROM_SUB_PATH = true;
         HTTP_PORT = 3000;
         SSH_PORT = lib.head config.services.openssh.ports;
       };
