@@ -34,7 +34,6 @@
     
     # Dev
     zed-editor
-    vscode # TODO: configure as home-manager module    
     gcc
     nixd
     nil
@@ -54,6 +53,7 @@
     # Fonts I use (probably to be moved elsewhere)
     nerd-fonts.jetbrains-mono
     nerd-fonts.mononoki
+    nerd-fonts.agave
   ];
 
   home.stateVersion = "25.11";

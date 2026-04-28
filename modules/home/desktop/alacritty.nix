@@ -16,7 +16,7 @@
       mouse.hide_when_typing = true;
       font = {
         normal = {
-          family = "JetBrainsMono Nerd Font";
+          family = "Mononoki Nerd Font";
           style = "Regular";
         };
         size = 14;
