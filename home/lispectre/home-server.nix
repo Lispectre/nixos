@@ -17,6 +17,8 @@
     nixd
     nil
     jujutsu
+    sops
+    age
   ];
   home.stateVersion = "25.11";
 }

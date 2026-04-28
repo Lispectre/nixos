@@ -31,6 +31,8 @@
     btop    
     typst
     typstyle
+    sops
+    age
     
     # Dev
     zed-editor

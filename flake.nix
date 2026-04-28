@@ -16,8 +16,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, disko, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, disko, sops-nix, ... }:
   let
     user = "lispectre";
     mkSystem = { system, name, pkgs ? nixpkgs, hm ? home-manager, homeCfg ? ./home/${user}/home.nix, extraModules ? [] }:
@@ -49,6 +53,7 @@
         homeCfg = ./home/${user}/home-server.nix;
         extraModules = [
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
         ];
       };
     };
