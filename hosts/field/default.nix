@@ -10,6 +10,7 @@
     ../../modules/nixos/server/zfs.nix
     ../../modules/nixos/server/ssh.nix
     ../../modules/nixos/server/tailscale.nix
+    ../../modules/nixos/server/forgejo.nix
   ];
 
   networking.hostName = "field";
