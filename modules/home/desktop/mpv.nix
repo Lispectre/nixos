@@ -1,7 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 {
   programs.mpv = {
     enable = true;
+    # Using stable build to avoid compiling rusty_v8 from unstable
+    package = inputs.nixpkgs.legacyPackages.x86_64-linux.mpv;
     config = {
       vo = "gpu-next";
       hwdec = "auto";

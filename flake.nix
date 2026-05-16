@@ -36,6 +36,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.${user} = import homeCfg;
             home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs user; };
           }
         ] ++ extraModules;
       };

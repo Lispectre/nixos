@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.alacritty = {
@@ -16,12 +16,12 @@
       mouse.hide_when_typing = true;
       font = {
         normal = {
-          family = "Mononoki Nerd Font";
+          family = "UbuntuMono Nerd Font";
           style = "Regular";
         };
-        size = 14;
+        size = 17;
       };
     };
-    theme = "kanagawa_dragon";
+    theme = "gruvbox_material";
   };
 }

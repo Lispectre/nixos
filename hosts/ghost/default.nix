@@ -5,13 +5,13 @@
     ./network-configuration.nix
     ./users.nix
 
-
     ../../modules/nixos/core.nix
      ../../modules/nixos/desktop/kde.nix
      ../../modules/nixos/desktop/pipewire.nix
      ../../modules/nixos/desktop/gamemode.nix
      ../../modules/nixos/hardware/nvidia.nix
      ../../modules/nixos/desktop/tailscale.nix
+     ../../modules/nixos/desktop/virtualbox.nix
   ];
 
   networking.hostName = "ghost";

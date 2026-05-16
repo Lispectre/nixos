@@ -12,6 +12,7 @@
     ../../modules/home/desktop/brave.nix
     ../../modules/home/desktop/mpv.nix
     ../../modules/home/desktop/alacritty.nix
+    ../../modules/home/desktop/zed.nix
   ];
 
   home.packages = with pkgs; [
@@ -35,27 +36,34 @@
     age
     
     # Dev
-    zed-editor
+    rust-analyzer
+    cargo
+    rustc
     gcc
     nixd
     nil
     jujutsu
+    zig
+    zls
     
     # Gaming
     steam
     vesktop
     mangohud
+    protonup-ng
+    pcsx2
 
     # Internet
     qbittorrent
 
     # Misc.
     calibre
+    libreoffice
 
     # Fonts I use (probably to be moved elsewhere)
     nerd-fonts.jetbrains-mono
-    nerd-fonts.mononoki
-    nerd-fonts.agave
+    nerd-fonts.monaspace
+    nerd-fonts.ubuntu-mono
   ];
 
   home.stateVersion = "25.11";

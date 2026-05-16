@@ -4,7 +4,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "kanagawa-dragon";
+      theme = "gruvbox-material";
       editor = {
         line-number = "relative";
         bufferline = "multiple";
