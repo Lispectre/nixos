@@ -12,7 +12,10 @@
         shape = "Beam";
         blinking = "On";
       };
-      terminal.shell = "nu";
+      terminal.shell = {
+        program = "zellij";
+        args = [];
+      };
       mouse.hide_when_typing = true;
       font = {
         normal = {
@@ -22,6 +25,6 @@
         size = 17;
       };
     };
-    theme = "gruvbox_material";
+    theme = "monokai";
   };
 }

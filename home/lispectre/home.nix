@@ -12,6 +12,7 @@
     ../../modules/home/desktop/brave.nix
     ../../modules/home/desktop/mpv.nix
     ../../modules/home/desktop/alacritty.nix
+    ../../modules/home/desktop/zellij.nix
     ../../modules/home/desktop/zed.nix
   ];
 
@@ -64,6 +65,9 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.monaspace
     nerd-fonts.ubuntu-mono
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
   ];
 
   home.stateVersion = "25.11";
