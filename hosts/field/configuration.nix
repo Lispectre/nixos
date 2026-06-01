@@ -7,6 +7,6 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
   services.openssh.enable = true;
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 
 }

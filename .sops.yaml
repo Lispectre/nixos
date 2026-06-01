@@ -1,7 +1,10 @@
 keys:
-  - &host_field age1unu484a5n49wd2fjgcqv9aqldxavqnrfcdhvpqgztv65yjc5jcrq88ee53
+  - &field age1unu484a5n49wd2fjgcqv9aqldxavqnrfcdhvpqgztv65yjc5jcrq88ee53
+  - &ghost age1qd75e75f2d674rsankfel4259v0atp92v8zxmx6zsksj08l999aqgtuqaf
 creation_rules:
-  - path_regex: secrets/.*\.yaml$
+  - path_regex: hosts/field/secrets/.*
     key_groups:
-      - age:
-          - *host_field
+      - age: [*field]
+  - path_regex: hosts/ghost/secrets/.*
+    key_groups:
+      - age: [*ghost]

@@ -21,7 +21,7 @@ let
             else                              { "node index.js" }
           },
           "racket" => {
-            let entry = (ls *.rkt | get name | first? | default "main.rkt")
+            let entry = (ls *.rkt | get name | first | default "main.rkt")
             $"racket ($entry)"
           },
           "nix" => "nix run",

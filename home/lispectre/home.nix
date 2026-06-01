@@ -24,6 +24,7 @@
     xz
     unzip
     p7zip
+    unrar
     ripgrep
     jq
     eza
@@ -56,10 +57,12 @@
 
     # Internet
     qbittorrent
+    nicotine-plus
 
     # Misc.
     calibre
     libreoffice
+    obs-studio
 
     # Fonts I use (probably to be moved elsewhere)
     nerd-fonts.jetbrains-mono

@@ -47,6 +47,9 @@
         name = "ghost";
         pkgs = nixpkgs-unstable;
         hm = home-manager-unstable;
+        extraModules = [
+          sops-nix.nixosModules.sops
+        ];
       };
       field = mkSystem {
         system = "x86_64-linux";

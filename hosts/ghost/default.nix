@@ -3,6 +3,7 @@
     ./configuration.nix
     ./hardware-configuration.nix
     ./network-configuration.nix
+    ./secret-configuration.nix
     ./users.nix
 
     ../../modules/nixos/core.nix
