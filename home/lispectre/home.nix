@@ -33,6 +33,7 @@
     typstyle
     sops
     age
+    beets
     
     # Dev
     zed-editor

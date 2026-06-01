@@ -13,6 +13,8 @@
     ../../modules/nixos/server/tailscale.nix
     ../../modules/nixos/server/forgejo.nix
     ../../modules/nixos/server/caddy.nix
+    ../../modules/nixos/server/samba.nix
+    ../../modules/nixos/server/navidrome.nix
   ];
 
   networking.hostName = "field";

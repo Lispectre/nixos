@@ -17,7 +17,7 @@ in
         HTTP_PORT = 3000;
         SSH_PORT = lib.head config.services.openssh.ports;
       };
-      service.DISABLE_REGISTRATION = false;
+      service.DISABLE_REGISTRATION = true;
       # actions = {
         # ENABLED = true;
         # DEFAULT_ACTION_URL = "github";
