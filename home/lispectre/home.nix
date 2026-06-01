@@ -8,6 +8,7 @@
     ../../modules/home/common/helix.nix
     ../../modules/home/common/nushell.nix
     ../../modules/home/common/git.nix
+    ../../modules/home/common/nh.nix
 
     ../../modules/home/desktop/brave.nix
     ../../modules/home/desktop/mpv.nix
@@ -36,6 +37,8 @@
     typstyle
     sops
     age
+    feishin
+    beets
     
     # Dev
     rust-analyzer
