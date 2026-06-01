@@ -20,8 +20,12 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kopuz = {
+      url = "github:temidaradev/kopuz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, disko, sops-nix, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, disko, sops-nix, kopuz, ... }:
   let
     user = "lispectre";
     mkSystem = { system, name, pkgs ? nixpkgs, hm ? home-manager, homeCfg ? ./home/${user}/home.nix, extraModules ? [] }:
@@ -36,6 +40,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.${user} = import homeCfg;
             home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs user; };
           }
         ] ++ extraModules;
       };
@@ -46,6 +51,9 @@
         name = "ghost";
         pkgs = nixpkgs-unstable;
         hm = home-manager-unstable;
+        extraModules = [
+          sops-nix.nixosModules.sops
+        ];
       };
       field = mkSystem {
         system = "x86_64-linux";

@@ -3,8 +3,8 @@
     ./configuration.nix
     ./hardware-configuration.nix
     ./network-configuration.nix
+    ./secret-configuration.nix
     ./users.nix
-
 
     ../../modules/nixos/core.nix
      ../../modules/nixos/desktop/kde.nix
@@ -12,6 +12,7 @@
      ../../modules/nixos/desktop/gamemode.nix
      ../../modules/nixos/hardware/nvidia.nix
      ../../modules/nixos/desktop/tailscale.nix
+     ../../modules/nixos/desktop/virtualbox.nix
   ];
 
   networking.hostName = "ghost";
