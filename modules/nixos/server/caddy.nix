@@ -12,7 +12,8 @@
         handle_path /git/* {
           reverse_proxy localhost:3000
         }
-        # reverse_proxy /navi* localhost:4533
+        redir /navi /navi/
+        reverse_proxy /navi/* localhost:4533
       '';
     };
   };
