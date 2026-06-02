@@ -1,15 +1,23 @@
-{ pkgs, ... }:
-{
+{ inputs, pkgs, ... }:
+
+let unstablePkgs = import inputs.nixpkgs-unstable {
+  inherit (pkgs) system;
+  config.allowUnfree = true;
+};   
+in {
   home.username = "lispectre";
   home.homeDirectory = "/home/lispectre";
   imports = [
     ../../modules/home/common/helix.nix
     ../../modules/home/common/nushell.nix
     ../../modules/home/common/git.nix
+    ../../modules/home/common/nh.nix
   ];
   home.packages = with pkgs; [
     ripgrep
-    beets
+    unstablePkgs.beets
+    unzip
+    p7zip
     jq
     eza
     fzf

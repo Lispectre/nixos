@@ -15,6 +15,7 @@
     ../../modules/nixos/server/caddy.nix
     ../../modules/nixos/server/samba.nix
     ../../modules/nixos/server/navidrome.nix
+    ../../modules/nixos/server/monitoring.nix
   ];
 
   networking.hostName = "field";
