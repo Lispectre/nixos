@@ -33,6 +33,7 @@
     hyperfine
     uutils-coreutils
     btop    
+    ntfs3g
     typst
     typstyle
     sops
@@ -57,6 +58,7 @@
     mangohud
     protonup-ng
     pcsx2
+    heroic
 
     # Internet
     qbittorrent
@@ -75,6 +77,8 @@
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
   ];
+
+  services.mpris-proxy.enable = true;
 
   home.stateVersion = "25.11";
 }
